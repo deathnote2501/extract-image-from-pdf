@@ -28,10 +28,10 @@ def wait_for_files_active(files):
 
 # Interface utilisateur Streamlit
 st.markdown("<h1 style='text-align: center;'>Création base de connaissances pour les GPTs</h1>", unsafe_allow_html=True)
-
+st.write("")
 image_url = "https://www.iacademy-formation.com/wp-content/uploads/2024/08/iyus-sugiharto-jpkxJAcp6a4-unsplash-modified-1.png"
 st.image(image_url, caption="PDF to Text Transcription", use_column_width=True)
-
+st.write("")
 uploaded_file = st.file_uploader("Upload your PDF file", type="pdf")
 
 if uploaded_file is not None:
