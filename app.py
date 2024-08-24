@@ -14,7 +14,7 @@ def upload_to_gemini(path, mime_type=None):
 
 def wait_for_files_active(files):
     """Waits for the given files to be active."""
-    st.write("Waiting for file processing...")
+    # st.write("Waiting for file processing...")
     for name in (file.name for file in files):
         file = genai.get_file(name)
         while file.state.name == "PROCESSING":
@@ -23,7 +23,7 @@ def wait_for_files_active(files):
             file = genai.get_file(name)
         if file.state.name != "ACTIVE":
             raise Exception(f"File {file.name} failed to process")
-    st.write("...all files ready")
+    # st.write("...all files ready")
     st.write("")
 
 # Interface utilisateur Streamlit
@@ -40,7 +40,7 @@ if uploaded_file is not None:
     with open("uploaded_file.pdf", "wb") as f:
         f.write(uploaded_file.getbuffer())
     
-    st.write("File uploaded successfully. Processing...")
+    st.write("Les fichiers ont été chargés avec succès. Traitement en cours...")
 
     # Upload the file to Gemini
     files = [upload_to_gemini("uploaded_file.pdf", mime_type="application/pdf")]
@@ -78,14 +78,14 @@ if uploaded_file is not None:
     response = chat_session.send_message("Retranscris ce document PDF en texte.")
     
     # Display the result
-    st.write("Transcription:")
+    st.write("Retranscription des images en cours...:")
     st.text(response.text)
 
     # Ajout d'un bouton pour télécharger la retranscription
     transcription_text = response.text
     if transcription_text:
         st.download_button(
-            label="Download Transcription as Text",
+            label="Télécharger la retranscription",
             data=transcription_text,
             file_name="transcription.txt",
             mime="text/plain"
