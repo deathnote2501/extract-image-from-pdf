@@ -30,8 +30,10 @@ def wait_for_files_active(files):
 st.markdown("<h1 style='text-align: center;'>Extraire les images de vos PDF</h1>", unsafe_allow_html=True)
 st.write("")
 image_url = "https://www.iacademy-formation.com/wp-content/uploads/2024/08/iyus-sugiharto-jpkxJAcp6a4-unsplash-modified-1.png"
+st.image(image_url, use_column_width=True)
 st.write("")
-uploaded_file = st.file_uploader("Chargez vos PDF(s)", type="pdf")
+st.markdown("<h2 style='text-align: left;'>Chargez vos fichiers PDF</h2>", unsafe_allow_html=True)
+uploaded_file = st.file_uploader("", type="pdf")
 
 if uploaded_file is not None:
     with open("uploaded_file.pdf", "wb") as f:
