@@ -32,7 +32,7 @@ st.write("")
 image_url = "https://www.iacademy-formation.com/wp-content/uploads/2024/08/iyus-sugiharto-jpkxJAcp6a4-unsplash-modified-1.png"
 st.image(image_url, use_column_width=True)
 st.write("")
-st.markdown("<h2 style='text-align: left;'>Chargez vos fichiers PDF</h2>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: left;'>Chargez vos fichiers PDF</h3>", unsafe_allow_html=True)
 uploaded_file = st.file_uploader("", type="pdf")
 
 if uploaded_file is not None:
