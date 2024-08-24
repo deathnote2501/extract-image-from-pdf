@@ -75,3 +75,13 @@ if uploaded_file is not None:
     # Display the result
     st.write("Transcription:")
     st.text(response.text)
+
+    # Ajout d'un bouton pour télécharger la retranscription
+    transcription_text = response.text
+    if transcription_text:
+        st.download_button(
+            label="Download Transcription as Text",
+            data=transcription_text,
+            file_name="transcription.txt",
+            mime="text/plain"
+        )
