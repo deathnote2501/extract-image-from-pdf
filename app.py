@@ -27,7 +27,8 @@ def wait_for_files_active(files):
     st.write("")
 
 # Interface utilisateur Streamlit
-st.markdown("<h1 style='text-align: center;'>Extraire les images de vos PDF</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Extraire les images de vos fichiers PDF</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Par Jérome IAvarone - IAvaronce conseil</p>", unsafe_allow_html=True)
 st.write("")
 image_url = "https://www.iacademy-formation.com/wp-content/uploads/2024/08/iyus-sugiharto-jpkxJAcp6a4-unsplash-modified-1.png"
 st.image(image_url, use_column_width=True)
