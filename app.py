@@ -27,7 +27,7 @@ def wait_for_files_active(files):
     st.write("")
 
 # Interface utilisateur Streamlit
-st.title("Gemini PDF to Text Transcription")
+st.markdown("<h1 style='text-align: center;'>Création base de connaissances pour les GPTs</h1>", unsafe_allow_html=True)
 
 image_url = "https://www.iacademy-formation.com/wp-content/uploads/2024/08/iyus-sugiharto-jpkxJAcp6a4-unsplash-modified-1.png"
 st.image(image_url, caption="PDF to Text Transcription", use_column_width=True)
@@ -89,7 +89,5 @@ if uploaded_file is not None:
             mime="text/plain"
         )
 
-st.write("")
-st.write("")
-st.write("")
-st.write("© 2024 Jérome Iavarone - jerome.iavarone@gmail.com")
+st.write("\n\n\n")
+st.markdown("<p style='text-align: center;'>© 2024 Jérome Iavarone - jerome.iavarone@gmail.com</p>", unsafe_allow_html=True)
