@@ -88,3 +88,8 @@ if uploaded_file is not None:
             file_name="transcription.txt",
             mime="text/plain"
         )
+
+st.write("")
+st.write("")
+st.write("")
+st.write("© 2024 Jérome Iavarone - jerome.iavarone@gmail.com")
