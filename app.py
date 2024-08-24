@@ -90,4 +90,4 @@ if uploaded_file is not None:
         )
 
 st.write("\n\n\n")
-st.markdown("<p style='text-align: center;'>© 2024 Jérome Iavarone - jerome.iavarone@gmail.com</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>© 2024 Jérome IAvarone - jerome.iavarone@gmail.com</p>", unsafe_allow_html=True)
