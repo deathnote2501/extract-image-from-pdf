@@ -29,6 +29,9 @@ def wait_for_files_active(files):
 # Interface utilisateur Streamlit
 st.title("Gemini PDF to Text Transcription")
 
+image_url = "https://www.iacademy-formation.com/wp-content/uploads/2024/08/iyus-sugiharto-jpkxJAcp6a4-unsplash-1024x576.jpg"
+st.image(image_url, caption="PDF to Text Transcription", use_column_width=True)
+
 uploaded_file = st.file_uploader("Upload your PDF file", type="pdf")
 
 if uploaded_file is not None:
