@@ -6,10 +6,18 @@ import google.generativeai as genai
 # Configuration de l'API
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
+# Affichage de l'en-tête, de l'image et du pied de page avant la demande de mot de passe
+st.markdown("<h1 style='text-align: center;'>Retranscrire les images de vos fichiers PDF</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Par Jérome IAvarone - IAvaronce conseil</p>", unsafe_allow_html=True)
+st.write("")
+image_url = "https://www.iacademy-formation.com/wp-content/uploads/2024/08/iyus-sugiharto-jpkxJAcp6a4-unsplash-modified-1.png"
+st.image(image_url, use_column_width=True)
+
 # Password input
 password = st.text_input("Entrez le mot de passe pour accéder à l'application", type="password")
 
 if password == st.secrets["PASSWORD"]:  # Mot de passe correct
+
     def upload_to_gemini(path, mime_type=None):
         """Uploads the given file to Gemini."""
         file = genai.upload_file(path, mime_type=mime_type)
@@ -28,12 +36,7 @@ if password == st.secrets["PASSWORD"]:  # Mot de passe correct
                 raise Exception(f"File {file.name} failed to process")
         st.write("")
 
-    # Interface utilisateur Streamlit
-    st.markdown("<h1 style='text-align: center;'>Retranscrire les images de vos fichiers PDF</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center;'>Par Jérome IAvarone - IAvaronce conseil</p>", unsafe_allow_html=True)
-    st.write("")
-    image_url = "https://www.iacademy-formation.com/wp-content/uploads/2024/08/iyus-sugiharto-jpkxJAcp6a4-unsplash-modified-1.png"
-    st.image(image_url, use_column_width=True)
+    # Interface utilisateur après validation du mot de passe
     st.write("")
     st.markdown("<h3 style='text-align: left;'>Chargez vos fichiers PDF</h3>", unsafe_allow_html=True)
     uploaded_file = st.file_uploader("", type="pdf")
@@ -93,10 +96,11 @@ if password == st.secrets["PASSWORD"]:  # Mot de passe correct
                 mime="text/plain"
             )
 
-    st.write("")
-    st.write("")
-    st.write("")
-    st.markdown("<p style='text-align: center;'>© 2024 Jérome IAvarone - jerome.iavarone@gmail.com</p>", unsafe_allow_html=True)
-
 elif password:  # Vérifie que l'utilisateur a saisi un mot de passe incorrect
     st.warning("Mot de passe incorrect.")
+
+# Affichage du pied de page
+st.write("")
+st.write("")
+st.write("")
+st.markdown("<p style='text-align: center;'>© 2024 Jérome IAvarone - jerome.iavarone@gmail.com</p>", unsafe_allow_html=True)
